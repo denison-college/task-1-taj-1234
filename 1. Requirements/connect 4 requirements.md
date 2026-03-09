@@ -1,12 +1,12 @@
 # Connect Four
 
-give them to play or get instructions
+give them the options to play or get instructions
 
-diplay board
+display the board
 
-give them the ability to put ther thing in a colum
+give them the ability to put there marker in a colum
 
-switch to dif players
+switch to different players
 
 detect a win condition
 
