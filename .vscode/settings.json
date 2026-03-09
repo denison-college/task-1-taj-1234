@@ -1,0 +1,6 @@
+{
+    "workbench.preferredDarkColorTheme": "Default High Contrast",
+    "workbench.sideBar.location": "right",
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
+}
