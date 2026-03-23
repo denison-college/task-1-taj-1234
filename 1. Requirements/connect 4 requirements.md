@@ -1,6 +1,8 @@
 # Connect Four
 
-give them the options to play or get instructions
+give them instructions
+
+let them choose how many rows and colums they want
 
 display the board
 
@@ -10,3 +12,4 @@ switch to different players
 
 detect a win condition
 
+let them play again or exit

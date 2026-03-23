@@ -1,6 +1,7 @@
 print("""
      1. select how many rows you want and how may colums you want
      2. select between the range defind to drop your marker into the colum
+      default connect 4 have 6 rows and 7 columns.
       """)
 ROWS = int(input('how many rows: '))
 COLS = int(input('how many colums: '))
@@ -53,26 +54,29 @@ def winning_move(board, piece):
 
     return False
 
+# checks if board is full
 def board_full(board):
     return all(board[0][c] != " " for c in range(COLS))
 
-#def play_again():
-#   print("if you want to play again enter again if you want to exit enter exit.")
-#   
-#   again = input("enter hear: ")
-#   
-#   if again == "again":
-#       
-#       play_game()
-#   if again == "exit":
-#       
-#       return False
-#   else:
-#       print("invalid word try again")
-        
+# allows player to play again
+def play_again():
+   print("if you want to play again enter again if you want to exit enter exit.")
+   i = 1
+   again = input("enter hear: ")
+   while i == 1:
+    if again == "again":
+        i = 0
+        return True
+    if again == "exit":
+        i = 0
+        return False
+    else:
+        print("invalid word try again")
+        again = input("enter hear: ")
 
 
 def play_game():
+    
     board = create_board()
     turn = 0  # 0 = Player 1, 1 = Player 2
     pieces = ["X", "O"]
@@ -108,8 +112,10 @@ def play_game():
             print("It's a tie!")
             break
 
-
         turn = 1 - turn  # Switch players
+    
+    if play_again() == True:
+        play_game()
 
 if __name__ == "__main__":
     play_game()
