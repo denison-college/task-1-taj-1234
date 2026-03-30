@@ -3,8 +3,8 @@ print("""
      2. select between the range defind to drop your marker into the colum
       default connect 4 have 6 rows and 7 columns.
       """)
-ROWS = int(input('how many rows: '))
-COLS = int(input('how many colums: '))
+# ROWS = int(input('how many rows: '))
+# COLS = int(input('how many colums: '))
 
 def create_board():
     return [[" " for _ in range(COLS)] for _ in range(ROWS)]
@@ -106,6 +106,7 @@ def play_game():
 
         if winning_move(board, piece):
             print(f"Player {turn + 1} ({piece}) wins!")
+            return turn
             break
 
         if board_full(board):
@@ -114,8 +115,19 @@ def play_game():
 
         turn = 1 - turn  # Switch players
     
-    if play_again() == True:
-        play_game()
-
+    # if play_again() == True:
+    #     play_game()
+p1_score = 0
+p2_score = 0
 if __name__ == "__main__":
-    play_game()
+    while True:
+        ROWS = int(input('how many rows: '))
+        COLS = int(input('how many colums: '))
+        y = play_game()
+        if y == 0:
+            p1_score = p1_score +1
+        elif y == 1:
+            p2_score = p2_score +1
+        print(f"scores", p1_score,p2_score)
+        if play_again() == False:
+            break
