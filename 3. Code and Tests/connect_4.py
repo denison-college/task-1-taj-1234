@@ -128,6 +128,6 @@ if __name__ == "__main__":
             p1_score = p1_score +1
         elif y == 1:
             p2_score = p2_score +1
-        print(f"scores", p1_score,p2_score)
+        print(f"scores: player 1", p1_score,"player 2",p2_score)
         if play_again() == False:
             break
